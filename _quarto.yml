@@ -27,7 +27,6 @@ book:
     - 08_matchingMFOFC.qmd
     - 09_fronts_megafauna.qmd
     - 10_eval_hist_plots.qmd
-    - summary.qmd
     - references.qmd
   
 bibliography: references.bib
