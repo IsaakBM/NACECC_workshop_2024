@@ -268,7 +268,7 @@ The model details are:
 cdo showname dt_global_allsat_madt_fsle_20160601_20210921.nc
 ```
 
-The model variables are: `fsle_max` `theta_max`
+The model variables are: `fsle_max` `theta_max`[@sudre2023a]
 :::
 
 ::: callout-warning
@@ -296,7 +296,7 @@ I strongly recommend downloading the data via `FTP` to simplify your workflow. Y
 
 In simple terms, the **Finite-size Lyapunov Exponent (FSLE)** is a tool used to understand how the ocean moves and mixes. FSLE helps identify lines in the ocean that act like barriers or pathways. High FSLE values highlight lines that act as transport barriers (known as Lagrangian coherent structures), which help identify features like filaments, fronts, or eddy boundaries.
 
-More information on these aspects, please read @sudre2023 and @sudre2023a
+More information on these aspects, please read [@sudre2023] and [@sudre2023b]
 
 ### Procesing FSLE data from AVISO (or any other climate data)
 
