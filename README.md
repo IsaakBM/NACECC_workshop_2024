@@ -1,9 +1,7 @@
-# Ocean Fronts Change Megafauna Workshop eBook
+# `Ocean Front` and `Marine Megafauna` eBook
 
-Welcome to the Ocean Fronts Change Megafauna Workshop's public data repository! This repository is a collection of "some" data, scripts, and helper functions pertaining to the Ocean Fronts Change project workshop, funded by the Belmont Forum.
+Welcome to the `Ocean Front` and Megafauna eBook! This eBook serves as a comprehensive resource related to the `Ocean Fronts` and `Marine Megafauna`.
 
-If you have any inquiries or need further assistance, please feel free to reach out to Isaac Brito-Morales or Lee Hannah. We are more than happy to provide support and address any questions you may have.
+If you have any questions or need further assistance, please feel free to reach out to [Isaac Brito-Morales](ibrito@conservation.org). We are here to provide support and address any inquiries you may have.
 
-We invite you to explore the information contained within this repository and utilize the resources provided to advance your understanding of ocean fronts and their impact on marine megafauna. By sharing this information, we aim to foster collaboration, drive research, and promote informed decision-making in the field of marine conservation.
-
-Thank you for your interest and participation in the Ocean Fronts Change Megafauna Workshop. Together, we can make a positive difference in protecting our oceans and the remarkable creatures that inhabit them.
+We encourage you to explore the content of this eBook and use the resources provided to deepen your understanding of `ocean fronts` and their impact on `marine megafauna`. Our goal is to foster collaboration, advance research, and promote informed decision-making in the field of marine conservation.
