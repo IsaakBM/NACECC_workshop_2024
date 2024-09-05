@@ -265,8 +265,8 @@ div.csl-indent {
   <li><a href="#ocean-front-dataset-aviso-product" id="toc-ocean-front-dataset-aviso-product" class="nav-link" data-scroll-target="#ocean-front-dataset-aviso-product"><span class="header-section-number">5.4</span> Ocean Front dataset: AVISO product</a>
   <ul class="collapse">
   <li><a href="#dynamical-fronts-finite-size-lyapunov-exponent-fsle" id="toc-dynamical-fronts-finite-size-lyapunov-exponent-fsle" class="nav-link" data-scroll-target="#dynamical-fronts-finite-size-lyapunov-exponent-fsle"><span class="header-section-number">5.4.1</span> Dynamical fronts: <strong>Finite-size lyapunov exponent (FSLE)</strong></a></li>
-  <li><a href="#thermal-fronts" id="toc-thermal-fronts" class="nav-link" data-scroll-target="#thermal-fronts"><span class="header-section-number">5.4.2</span> Thermal fronts</a></li>
-  <li><a href="#procesing-fsle-data-from-aviso-or-any-other-climate-data" id="toc-procesing-fsle-data-from-aviso-or-any-other-climate-data" class="nav-link" data-scroll-target="#procesing-fsle-data-from-aviso-or-any-other-climate-data"><span class="header-section-number">5.4.3</span> Procesing FSLE data from AVISO (or any other climate data)</a></li>
+  <li><a href="#procesing-fsle-data-from-aviso-or-any-other-climate-data" id="toc-procesing-fsle-data-from-aviso-or-any-other-climate-data" class="nav-link" data-scroll-target="#procesing-fsle-data-from-aviso-or-any-other-climate-data"><span class="header-section-number">5.4.2</span> Procesing FSLE data from AVISO (or any other climate data)</a></li>
+  <li><a href="#thermal-fronts" id="toc-thermal-fronts" class="nav-link" data-scroll-target="#thermal-fronts"><span class="header-section-number">5.4.3</span> Thermal fronts</a></li>
   </ul></li>
   <li><a href="#exploring-useful-cdo-functions" id="toc-exploring-useful-cdo-functions" class="nav-link" data-scroll-target="#exploring-useful-cdo-functions"><span class="header-section-number">5.5</span> Exploring Useful CDO Functions</a></li>
   <li><a href="#workflow-for-using-climate-model-outputs" id="toc-workflow-for-using-climate-model-outputs" class="nav-link" data-scroll-target="#workflow-for-using-climate-model-outputs"><span class="header-section-number">5.6</span> Workflow for using climate model outputs</a></li>
@@ -646,58 +646,8 @@ Note
 <p>In simple terms, the <strong>Finite-size Lyapunov Exponent (FSLE)</strong> is a tool used to understand how the ocean moves and mixes. FSLE helps identify lines in the ocean that act like barriers or pathways. High FSLE values highlight lines that act as transport barriers (known as Lagrangian coherent structures), which help identify features like filaments, fronts, or eddy boundaries.</p>
 <p>More information on these aspects, please read <span class="citation" data-cites="sudre2023">(<a href="references.html#ref-sudre2023" role="doc-biblioref">Sudre, Dewitte, et al. 2023</a>)</span></p>
 </section>
-<section id="thermal-fronts" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="thermal-fronts"><span class="header-section-number">5.4.2</span> Thermal fronts</h3>
-<p>Thermal fronts are typically derived from remotely sensed sea surface temperature (SST) data. While this eBook does not cover this specific type of data, calculating thermal fronts is essentially based on estimating <code>thermal gradients</code>. In the <code>R</code> package <code>terra</code>, you can estimate the <code>thermal gradient</code> on any <code>raster</code> by simply using the <code>slope</code> argument in the <code>terra::terrain()</code> function. This approach allows you to identify areas where the temperature changes rapidly over space, in which high values corresponds to <code>thermal fronts</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-thermal fronts calculation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the raster stack of sea surface temperature (SST) from the NOAA product at 0.25 degrees resolution</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>rs <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data_raw/thermal_rs/oisst-avhrr-v02r01_19832000_mmean.tif"</span>)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the first layer of the raster stack to visually check the data</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(rs, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/boa_01.png" class="img-fluid figure-img" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the slope (thermal gradient) for the first layer of the SST data</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>slp <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">terrain</span>(<span class="fu">subset</span>(rs, <span class="dv">1</span>), <span class="st">"slope"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the calculated slope to visually inspect the result</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(slp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/boa_02.png" class="img-fluid figure-img" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="procesing-fsle-data-from-aviso-or-any-other-climate-data" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="procesing-fsle-data-from-aviso-or-any-other-climate-data"><span class="header-section-number">5.4.3</span> Procesing FSLE data from AVISO (or any other climate data)</h3>
+<section id="procesing-fsle-data-from-aviso-or-any-other-climate-data" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="procesing-fsle-data-from-aviso-or-any-other-climate-data"><span class="header-section-number">5.4.2</span> Procesing FSLE data from AVISO (or any other climate data)</h3>
 <p>You do not actually have to download the front dataset from <code>AVISO</code> at this point. We will use the dataset located in the workshop repository that you have previously <code>cloned</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -746,14 +696,14 @@ Example 1: Using <code>CDO</code> to merge files
 <p>To better handle front or any other climate data, organizing the dataset by <code>year</code> or <code>month</code> is the way to go. In fact, the <code>IPCC</code> data structure typically works with monthly files (and sometimes yearly files).</p>
 <p>Using <code>CDO</code> to merge files is simple. We will have to use <code>-mergetime</code> operator in the directory. For example, using the <code>terminal</code> or the <code>RStudio terminal tab</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate to the directory where the front data is stored</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>cd data_raw<span class="sc">/</span><span class="dv">2016</span><span class="sc">/</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check how many NetCDF files are in the directory</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>ls <span class="sc">-</span>l <span class="sc">*</span>.nc</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the two NetCDF files</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>cdo <span class="sc">-</span>mergetime <span class="sc">*</span>.nc combined_file.nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate to the directory where the front data is stored</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>cd data_raw<span class="sc">/</span><span class="dv">2016</span><span class="sc">/</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check how many NetCDF files are in the directory</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>ls <span class="sc">-</span>l <span class="sc">*</span>.nc</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the two NetCDF files</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>cdo <span class="sc">-</span>mergetime <span class="sc">*</span>.nc combined_file.nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -766,14 +716,14 @@ Example 1: Using <code>CDO</code> to merge files
 </ul>
 <p>From the code before we can see:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the operator for merging files</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>Operator <span class="sc">==</span> <span class="st">"-mergetime"</span> </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the input files (using wildcard * to identify all .nc files in the directory)</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>input_files <span class="sc">==</span> <span class="st">"*.nc"</span> </span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the output file name (make sure to include the extension)</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>output_files <span class="sc">==</span> <span class="st">"combined_file.nc"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the operator for merging files</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>Operator <span class="sc">==</span> <span class="st">"-mergetime"</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the input files (using wildcard * to identify all .nc files in the directory)</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>input_files <span class="sc">==</span> <span class="st">"*.nc"</span> </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the output file name (make sure to include the extension)</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>output_files <span class="sc">==</span> <span class="st">"combined_file.nc"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -789,7 +739,7 @@ Example 2: Check the new file and plot it using <code>ncview</code>
 <div class="callout-body-container callout-body">
 <p>To check the structure of the new <code>combined_file.nc</code> file, we will use the <code>-sinfo</code> operator. In the same directorty <code>data_raw/2016/</code>, type (using the <code>terminal</code> or the <code>RStudio terminal tab</code>):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>cdo <span class="sc">-</span>sinfo combined_file.nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>cdo <span class="sc">-</span>sinfo combined_file.nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -798,7 +748,57 @@ Example 2: Check the new file and plot it using <code>ncview</code>
 </div>
 <p>To quickly plot the new <code>combined_file.nc</code> using <code>ncview</code>, type:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ncview combined_file.nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ncview combined_file.nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="thermal-fronts" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="thermal-fronts"><span class="header-section-number">5.4.3</span> Thermal fronts</h3>
+<p>Thermal fronts are typically derived from remotely sensed sea surface temperature (SST) data. While this eBook does not cover this specific type of data, calculating thermal fronts is essentially based on estimating <code>thermal gradients</code>. In the <code>R</code> package <code>terra</code>, you can estimate the <code>thermal gradient</code> on any <code>raster</code> by simply using the <code>slope</code> argument in the <code>terra::terrain()</code> function. This approach allows you to identify areas where the temperature changes rapidly over space, in which high values corresponds to <code>thermal fronts</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+thermal fronts calculation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the raster stack of sea surface temperature (SST) from the NOAA product at 0.25 degrees resolution</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>rs <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data_raw/thermal_rs/oisst-avhrr-v02r01_19832000_mmean.tif"</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the first layer of the raster stack to visually check the data</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(rs, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/boa_01.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the slope (thermal gradient) for the first layer of the SST data</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>slp <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">terrain</span>(<span class="fu">subset</span>(rs, <span class="dv">1</span>), <span class="st">"slope"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the calculated slope to visually inspect the result</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(slp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/boa_02.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 </div>
 </div>
