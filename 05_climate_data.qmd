@@ -298,6 +298,40 @@ In simple terms, the **Finite-size Lyapunov Exponent (FSLE)** is a tool used to 
 
 More information on these aspects, please read [@sudre2023]
 
+### Thermal fronts
+
+Thermal fronts are typically derived from remotely sensed sea surface temperature (SST) data. While this eBook does not cover this specific type of data, calculating thermal fronts is essentially based on estimating `thermal gradients`. In the `R` package `terra`, you can estimate the `thermal gradient` on any `raster` by simply using the `slope` argument in the `terra::terrain()` function. This approach allows you to identify areas where the temperature changes rapidly over space, in which high values corresponds to `thermal fronts`.
+
+::: callout-tip
+## thermal fronts calculation
+
+```{r, message = FALSE, warning = FALSE, out.width = "40%", eval = FALSE}
+library(terra)
+
+# Read the raster stack of sea surface temperature (SST) from the NOAA product at 0.25 degrees resolution
+rs <- rast("data_raw/thermal_rs/oisst-avhrr-v02r01_19832000_mmean.tif")
+
+# Plot the first layer of the raster stack to visually check the data
+plot(rs, 1)
+```
+
+```{r, out.width = "60%", echo = FALSE,  fig.align = "center"}
+  knitr::include_graphics("images/boa_01.png")
+```
+
+```{r, message = FALSE, warning = FALSE, out.width = "40%", eval = FALSE}
+# Calculate the slope (thermal gradient) for the first layer of the SST data
+slp <- terra::terrain(subset(rs, 1), "slope")
+
+# Plot the calculated slope to visually inspect the result
+plot(slp)
+```
+
+```{r, out.width = "60%", echo = FALSE,  fig.align = "center"}
+  knitr::include_graphics("images/boa_02.png")
+```
+:::
+
 ### Procesing FSLE data from AVISO (or any other climate data)
 
 You do not actually have to download the front dataset from `AVISO` at this point. We will use the dataset located in the workshop repository that you have previously `cloned`.
