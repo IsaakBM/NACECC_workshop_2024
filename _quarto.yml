@@ -11,7 +11,7 @@ book:
     background: light
   cover-image: images/CINT.png
   search: true
-  repo-url: https://github.com/IsaakBM/NACECC_workshop
+  repo-url: https://github.com/IsaakBM/NACECC_workshop_2024
   repo-actions: [issue]
   downloads: [pdf]
   sharing: [twitter, facebook]
