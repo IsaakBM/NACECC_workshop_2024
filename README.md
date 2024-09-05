@@ -1,4 +1,4 @@
-# OFC
+# Ocean Fronts Change Megafauna Workshop eBook
 
 Welcome to the Ocean Fronts Change Megafauna Workshop's public data repository! This repository is a collection of "some" data, scripts, and helper functions pertaining to the Ocean Fronts Change project workshop, funded by the Belmont Forum.
 
