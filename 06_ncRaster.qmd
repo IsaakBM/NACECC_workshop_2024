@@ -1,0 +1,196 @@
+# `netCDF` files in `R`: `Raster`, `Spatial` objects
+
+This section is tailored for working with `Spatial` data, with a particular emphasis on `FSLE front` data, although the methods discussed are applicable to any `netCDF` file. The tutorial aims to provide a practical example---specifically, a function---demonstrating how to transform a regridded `netCDF` file into a Raster object using R.
+
+Pre-existing code, named `f_ncdf2DRaster01_AVISO.R`, is available in the `zscripts/` directory. This code is a fully developed function, optimized for parallel processing, which offers enhanced control over the output. This approach is especially beneficial for handling large, high-resolution `netCDF` files, where using simpler functions like `raster` (from the `Raster` library) or `rast` (from the `terra` library) in `R` would likely overwhelm your local machine's memory resources.
+
+::: {.callout-caution collapse="true"}
+## Reading `netCDF` files using the `terra` package
+
+`netCDF` files were traditionally read in `R` using the `raster` package. However, in recent years, the `raster` package has been largely replaced by the `terra` package. I strongly recommend using this new package, as it is faster and significantly improves the readability and manipulation of `Spatial` data in `R`.
+
+To read a `netCDF` file using the `terra` package, you would write:
+
+```{r, message = FALSE, warning = FALSE, out.width = "40%", eval = FALSE}
+library(terra)
+
+# Load the netCDF file as a raster
+rs <- rast("data_raw/2016/dt_global_allsat_madt_fsle_20160601_20210921.nc")
+
+# Plot the first layer of the raster
+plot(rs, 1)
+```
+:::
+
+## Data import
+
+To run the next chunks of code, you'll need a few `R` packages. We can approach this in two ways: the usual way, which is straightforward, or a more advanced method if you're feeling like an expert!
+
+```{r, message = FALSE, warning = FALSE, out.width = "40%", eval = FALSE}
+
+install.packages(c("terra", "ncdf4", "ncdf4.helpers", "PCICt", 
+                   "dplyr", "magrittr"))
+
+# load packages
+  library(terra)
+  library(ncdf4)
+  library(ncdf4.helpers)
+  library(PCICt)
+  library(dplyr)
+  library(magrittr)
+
+# List of pacakges that we will use
+  list.of.packages <- c("terra", "ncdf4", "ncdf4.helpers", "PCICt", "dplyr", "magrittr")
+
+# If is not installed, install the package
+  new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+      if(length(new.packages)) install.packages(new.packages)
+
+# Load packages
+  lapply(list.of.packages, require, character.only = TRUE)
+
+```
+
+## Function to transform `netCDF` files into `Raster` objects
+
+This code provides enhanced control over the outputs compared to standard methods. By handling the `netCDF` data step by step, it ensures that the spatial and time dimensions are correctly aligned, making the resulting `raster stack` ready for any analysis you want to do. This is especially useful when dealing with larger or more complicated datasets, where a bit of extra care in setting things up can make a big difference in the accuracy and performance of your work.
+
+Let's walk through the code step by step.
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+# Define general variables
+nc = "data_raw/2016/combined_file.nc"  # Path to the netCDF file
+v = "fsle_max"  # Variable name in the netCDF file to be extracted
+x = "lon"  # Longitude variable
+y = "lat"  # Latitude variable
+
+# Open the netCDF file
+nc <- ncdf4::nc_open(nc)  # Load the netCDF file
+dat <- ncdf4::ncvar_get(nc, v)  # Extract the data for the specified variable (v)
+dat[] <- dat  # Store the data in a matrix for further processing
+
+# Get the range of longitude and latitude values
+rlon <- ncdf4::ncvar_get(nc, varid = x) %>% range()  # Longitude range
+rlat <- ncdf4::ncvar_get(nc, varid = y) %>% range()  # Latitude range
+
+# Determine the dimensions of the data (X = number of longitude points, Y = number of latitude points)
+X <- dim(dat)[1]
+Y <- dim(dat)[2]
+
+# Extract and format the time dimension as a Date vector
+tt <- ncdf4.helpers::nc.get.time.series(nc, v = "time", time.dim.name = "time")
+tt <- as.POSIXct(tt) %>% as.Date()  # Convert to Date format
+
+# Close the netCDF file to free up resources
+ncdf4::nc_close(nc)
+
+# Create a raster template with the appropriate dimensions and extent
+rs <- terra::rast(nrow = Y, ncol = X, extent = terra::ext(c(rlon, rlat)))
+
+# Fix the orientation of the data to match the raster orientation
+drs <- terra::xyFromCell(rs, 1:terra::ncell(rs)) %>% as_tibble()
+
+# Initialize an empty list to store the raster layers
+rs_list <- list()  
+st <- terra::rast()  # Initialize an empty raster stack
+
+# Loop through each time step, creating a raster layer for each
+for (i in 1:length(tt)) {  
+  dt1 <- dplyr::bind_cols(drs, as.vector(dat[, , i])) %>%
+    magrittr::set_colnames(c("x", "y", v))  # Bind coordinates and data into a single table
+  
+  dt1 <- terra::rast(dt1, type = "xyz")  # Create a raster from the table
+  names(dt1) <- tt[i]  # Name the raster layer based on the date
+  
+  st <- c(st, terra::flip(dt1))  # Add the raster layer to the stack after flipping orientation if necessary
+  
+  print(paste0(tt[i], " of ", length(tt)))  # Print progress information
+}
+
+    
+```
+
+::: callout-warning
+## Warning
+
+The code above is designed to work with `netCDF` files that have more than one time layer, assuming you're dealing with complex `netCDF` files. However, it can be easily adapted for simpler files (1 time layer) by replacing the loop above with the following code:
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+# For simpler netCDF files, you can remove the loop above and use this code instead:
+for (i in 1:length(tt)) {  # Loop through each time step
+  dt1 <- dplyr::bind_cols(drs, as.vector(dat[])) %>%  # Combine coordinates with data (no need to loop through data)
+    magrittr::set_colnames(c("x", "y", v))  # Set column names
+  
+  dt1 <- terra::rast(dt1, type = "xyz")  # Create a raster from the table
+  names(dt1) <- tt[i]  # Assign the time step as the raster name
+  st <- c(st, terra::flip(dt1))  # Add the raster to the stack after flipping its orientation
+  
+  print(paste0(tt[i], " of ", length(tt)))  # Print progress
+}
+```
+:::
+
+## `Crop`/Manipulate and project
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+# Define the output directory
+outdir <- "data_rout/"
+
+# Load the raster file
+rs  <-  "data_raw/2016/combined_file.nc"
+rs01 <- rast(rs)
+
+# Rotate the raster to correct orientation issues (if any)
+rs02 <- terra::rotate(rs01)
+
+# Crop the raster to the specified extent (coordinates for the North Atlantic region)
+rs03 <- terra::crop(rs02, ext(-70, -10, 33, 67))
+
+# Generate the output file name by appending the input file name to the output directory
+output_name <- paste0(outdir, basename(rs))
+
+# Save the cropped raster to the specified output directory
+terra::writeRaster(rs03, output_name, overwrite = TRUE)
+```
+
+::: {.callout-caution collapse="true"}
+## Automated `crop` Function for Multiple Files
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+
+rs_split <- function(rs, outdir) {
+  
+  library(dplyr)
+  library(terra)
+  library(stringr)
+  
+  dir_rs <- list.files(path = rs, 
+                       pattern = "*.tif", 
+                       all.files = TRUE, 
+                       full.names = TRUE, 
+                       recursive = FALSE)
+  FF <- lapply(dir_rs, function(x){
+    rs01 <- rast(x)
+    rs02 <- terra::rotate(rs01)
+    rs03 <- terra::crop(rs02, ext(-70, -10, 33, 67)) # North Atlantic
+  # Generate output file name based on input file name
+    # output_name <- gsub(pattern = "\\.tif$", replacement = "_processed.tif", basename(x))
+    output_name <- paste0(outdir, basename(x))
+    terra::writeRaster(rs03, output_name)
+  })
+}
+
+rs_split(rs = "data_raw/fsle_rs00",
+         outdir = "data_raw/fsle_rs/")
+```
+:::
+
+## Save the Raster file
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+# Writing Raster
+  terra::writeRaster(st,
+                     "tos_Omon_GFDL-ESM4_ssp585_r1i1p1f1_gr_201501-203412.tif",
+                     overwrite = TRUE,
+                     filetype = "GTiff")
+```

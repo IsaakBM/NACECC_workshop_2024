@@ -1,0 +1,49 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Hands-On: Ocean Fronts Workshop 2024"
+  author: "Isaac Brito-Morales & Lee Hannah"
+  date: "8/27/2024"
+  sidebar:
+    style: docked
+    background: light
+  cover-image: images/CINT.png
+  search: true
+  repo-url: https://github.com/IsaakBM/NACECC_workshop
+  repo-actions: [issue]
+  downloads: [pdf]
+  sharing: [twitter, facebook]
+  chapters:
+    - index.qmd
+    - 01_preparation.qmd
+    - 02_set_up.qmd
+    - 03_git_github.qmd
+    - 04_cloning_repo.qmd
+    - 05_climate_data.qmd
+    - 06_ncRaster.qmd
+    - 07_equalGrid.qmd
+    - 08_matchingMFOFC.qmd
+    - 09_fronts_megafauna.qmd
+    - 10_eval_hist_plots.qmd
+    - summary.qmd
+    - references.qmd
+  
+bibliography: references.bib
+
+comments:
+  hypothesis: true
+
+format:
+  html:
+    theme: cosmo
+    grid:
+      sidebar-width: 400px
+      body-width: 700px
+      margin-width: 500px
+      gutter-width: 1.5rem
+  pdf:
+    documentclass: scrreprt
+
+editor: visual

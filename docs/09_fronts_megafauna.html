@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Hands-On: Ocean Fronts Workshop 2024 - 9&nbsp; Megafauna and Ocean Fronts</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./10_eval_hist_plots.html" rel="next">
+<link href="./08_matchingMFOFC.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09_fronts_megafauna.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Megafauna and `Ocean Fronts`</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Hands-On: Ocean Fronts Workshop 2024</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/IsaakBM/NACECC_workshop" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Hands-On--Ocean-Fronts-Workshop-2024.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About this book</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_set_up.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setting up your computer</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_git_github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What exactly are <code>Git</code> and <code>GitHub</code>?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_cloning_repo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Started: workshop repository</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_climate_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting Started with Climate Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_ncRaster.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><code>netCDF</code> files in <code>R</code>: <code>Raster</code>, <code>Spatial</code> objects</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_equalGrid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><code>equal-area grid</code> for your area of interest</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_matchingMFOFC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Extracting <code>Front</code> Data (or any variable) for the Created Grid</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_fronts_megafauna.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Megafauna and <code>Ocean Fronts</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_eval_hist_plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Distance Plots</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#seabird-dataset" id="toc-seabird-dataset" class="nav-link active" data-scroll-target="#seabird-dataset"><span class="header-section-number">9.1</span> <code>Seabird</code> dataset</a></li>
+  <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import"><span class="header-section-number">9.2</span> Data import</a></li>
+  <li><a href="#distance-to-fronts" id="toc-distance-to-fronts" class="nav-link" data-scroll-target="#distance-to-fronts"><span class="header-section-number">9.3</span> Distance to Fronts</a>
+  <ul class="collapse">
+  <li><a href="#split-the-seabird-dataset-by-birdid" id="toc-split-the-seabird-dataset-by-birdid" class="nav-link" data-scroll-target="#split-the-seabird-dataset-by-birdid"><span class="header-section-number">9.3.1</span> Split the Seabird Dataset by <code>birdID</code></a></li>
+  <li><a href="#nearest-distance-to-ocean-fronts" id="toc-nearest-distance-to-ocean-fronts" class="nav-link" data-scroll-target="#nearest-distance-to-ocean-fronts"><span class="header-section-number">9.3.2</span> Nearest distance to <code>Ocean Fronts</code></a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/IsaakBM/NACECC_workshop/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Megafauna and <code>Ocean Fronts</code></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="seabird-dataset" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="seabird-dataset"><span class="header-section-number">9.1</span> <code>Seabird</code> dataset</h2>
+<p>In this chapter, we will explore whether marine megafauna intersect with the <code>ocean front</code> dataset we generated earlier. We will use the Gull Island dataset, which contains tracking data from 2016-2022, with positions recorded every two hours. Each bird in the dataset has a unique <code>birdID</code>, and multiple trips are recorded for each bird, each with its own unique <code>ID</code>.</p>
+<p>The dataset includes a <code>states3_hr</code> column that categorizes behavior into three states:</p>
+<ul>
+<li><code>transit</code>: rapid movement to reach foraging areas</li>
+<li><code>extensive search</code>: slower movement with tighter turns, likely searching for food</li>
+<li><code>intensive search</code> very slow movement with tight turns, indicating foraging in dense prey patches</li>
+</ul>
+<p>There is a <code>states2from3</code> column that combines the <code>extensive</code> and <code>intensive</code> search states into a single <code>foraging</code> category. This will help us determine how the movements of marine megafauna align with the ocean fronts we’ve identified.</p>
+<p>For more information about the dataset, contact <a href="April.Hedd@ec.gc.ca">April.Hedd@ec.gc.ca</a> and Katharine Studholme <a href="Katharine.Studholme@ec.gc.ca">Katharine.Studholme@ec.gc.ca</a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image002.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="data-import" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="data-import"><span class="header-section-number">9.2</span> Data import</h2>
+<p>To make the most of our time during this workshop, we will focus on using data from 2021, specifically the records from July and August. You can source the necessary helper functions with the script <code>z_helpFX.R</code> and load the relevant files using <code>z_inputFls_local.R</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Source the helper functions and input files</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_helpFX.R"</span>)  <span class="co"># Load helper functions from the script</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_inputFls_local.R"</span>)  <span class="co"># Load input files specific to this workshop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Alternatively, you can filter any date within the dataset by using the following code:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+filtering the <code>seabird</code> dataset
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)  <span class="co"># For data manipulation</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)  <span class="co"># For reading and writing data</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Load the general seabird dataset and convert it to a tibble for easier manipulation</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sbG <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data_raw/seabird_test/data_HMMclassified_Gull_2016_22.rds"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Filter foraging behavior for July 2021</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># This filters the dataset for entries in July 2021 where the seabird behavior is classified as 'Foraging'</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>sbF_07 <span class="ot">&lt;-</span> sbG <span class="sc">%&gt;%</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(datetime_utc <span class="sc">%in%</span> sbG<span class="sc">$</span>datetime_utc[stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="at">string =</span> sbG<span class="sc">$</span>datetime_utc, <span class="at">pattern =</span> <span class="st">"2021-07.*"</span>)]) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(states2from3 <span class="sc">==</span> <span class="st">"Foraging"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Similar to the above, but filtering for August 2021</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>sbF_08 <span class="ot">&lt;-</span> sbG <span class="sc">%&gt;%</span> </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(datetime_utc <span class="sc">%in%</span> sbG<span class="sc">$</span>datetime_utc[stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="at">string =</span> sbG<span class="sc">$</span>datetime_utc, <span class="at">pattern =</span> <span class="st">"2021-08.*"</span>)]) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(states2from3 <span class="sc">==</span> <span class="st">"Foraging"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Filter transit behavior for July 2021</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># This filters the dataset for entries in July 2021 where the seabird behavior is classified as 'Transit'</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>sbT_07 <span class="ot">&lt;-</span> sbG <span class="sc">%&gt;%</span> </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(datetime_utc <span class="sc">%in%</span> sbG<span class="sc">$</span>datetime_utc[stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="at">string =</span> sbG<span class="sc">$</span>datetime_utc, <span class="at">pattern =</span> <span class="st">"2021-07.*"</span>)]) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(states2from3 <span class="sc">==</span> <span class="st">"Transit"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Similar to the above, but filtering for August 2021</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>sbT_08 <span class="ot">&lt;-</span> sbG <span class="sc">%&gt;%</span> </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(datetime_utc <span class="sc">%in%</span> sbG<span class="sc">$</span>datetime_utc[stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="at">string =</span> sbG<span class="sc">$</span>datetime_utc, <span class="at">pattern =</span> <span class="st">"2021-08.*"</span>)]) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(states2from3 <span class="sc">==</span> <span class="st">"Transit"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Plot the data using <code>ggplot</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Source the helper functions and input files</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_helpFX.R"</span>)  <span class="co"># Load helper functions from the script</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_inputFls_local.R"</span>)  <span class="co"># Load input files specific to this workshop</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the filtered seabird data (sbF_07) into a spatial object (sf) using the x and y coordinates</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># The coordinate reference system (CRS) is set to LatLon (likely WGS 84)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>mmF <span class="ot">&lt;-</span> sbF_07 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  sf<span class="sc">::</span><span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), <span class="at">crs =</span> LatLon) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> robin)  <span class="co"># Transform the spatial data to the Robinson projection (crs = robin)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a ggplot object to visualize the seabird data (mmF) on a map</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>mmF_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mmF, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.3</span>) <span class="sc">+</span>  <span class="co"># Plot the seabird data as blue points</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> worldsf_rob, <span class="at">size =</span> <span class="fl">0.05</span>, <span class="at">fill =</span> <span class="st">"grey20"</span>) <span class="sc">+</span>  <span class="co"># Overlay a map of the world with dark grey landmasses</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span>  <span class="co"># Apply a clean, white background theme.</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="fu">st_bbox</span>(worldsf_rob2)<span class="sc">$</span>xmin <span class="sc">+</span> <span class="dv">85000</span>, <span class="fu">st_bbox</span>(worldsf_rob2)<span class="sc">$</span>xmax <span class="sc">-</span> <span class="dv">85000</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fu">st_bbox</span>(worldsf_rob2)<span class="sc">$</span>ymin <span class="sc">+</span> <span class="dv">70000</span>, <span class="fu">st_bbox</span>(worldsf_rob2)<span class="sc">$</span>ymax <span class="sc">-</span> <span class="dv">70000</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">expand =</span> <span class="cn">TRUE</span>)  <span class="co"># Set the coordinate limits to zoom in on a specific region of the map</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mmF_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seabird_test_01.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="distance-to-fronts" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="distance-to-fronts"><span class="header-section-number">9.3</span> Distance to Fronts</h2>
+<section id="split-the-seabird-dataset-by-birdid" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="split-the-seabird-dataset-by-birdid"><span class="header-section-number">9.3.1</span> Split the Seabird Dataset by <code>birdID</code></h3>
+<p>The <a href="https://github.com/IsaakBM/NACECC_workshop_repo">workshop repository</a> for this eBook includes an inputs_sb directory, which contains two subdirectories: <code>sb_LSP_F</code> and <code>sb_LSP_T.</code> These subdirectories hold individual files for each <code>birdID.</code> Splitting the data into individual files offers the advantage of better control and visualization of each bird’s tracking data, making the workflow more efficient. However, this approach does result in a large number of files.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+splitting function: <code>f02_SplitGroups_v01.R</code> located in <code>zscripts</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Source the script that loads input files specific to this workflow</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_inputFls_local.R"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f_split that takes a spatial dataset (sps) and an output directory (outdir) as inputs</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>f_split <span class="ot">&lt;-</span> <span class="cf">function</span>(sps, outdir) {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load necessary libraries</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(sf)        <span class="co"># For handling spatial data</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(terra)     <span class="co"># For raster and vector data operations</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(raster)    <span class="co"># For raster data manipulation</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(lubridate) <span class="co"># For working with date-time data</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a copy of the input dataset</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  sps1 <span class="ot">&lt;-</span> sps</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extract unique bird IDs and behavior states from the dataset</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  grp <span class="ot">&lt;-</span> <span class="fu">unique</span>(sps1<span class="sc">$</span>birdID)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  grp2 <span class="ot">&lt;-</span> <span class="fu">unique</span>(sps1<span class="sc">$</span>states2from3)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Double for loop to process each bird ID individually</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="fu">seq_along</span>(grp)) {</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Filter the dataset for the current bird ID</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    grp_sgl <span class="ot">&lt;-</span> grp[j]</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    df1 <span class="ot">&lt;-</span> sps1 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">filter</span>(birdID <span class="sc">==</span> grp_sgl) <span class="sc">%&gt;%</span>  <span class="co"># Keep only data for the current bird</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">date</span>(datetime_utc)) <span class="sc">%&gt;%</span>  <span class="co"># Extract and add a date column</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">select</span>(x, y, birdID, datetime_utc, date, states3_hr, states2from3)  <span class="co"># Select relevant columns</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate a file name for the output file</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    ngrd <span class="ot">&lt;-</span> <span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="fu">basename</span>(outdir), <span class="st">"_"</span>))[<span class="dv">2</span>]  <span class="co"># Extract a part of the directory name</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    ndate <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="fu">unlist</span>(<span class="fu">unique</span>(df1<span class="sc">$</span>date)[<span class="dv">1</span>]), <span class="st">"-"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="at">collapse =</span> <span class="st">"-"</span>)  <span class="co"># Format the date</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    ffname <span class="ot">&lt;-</span> <span class="fu">paste</span>(ngrd, <span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">""</span>, grp2), ndate, <span class="fu">gsub</span>(<span class="st">"[./]"</span>, <span class="st">""</span>, grp_sgl), <span class="at">sep =</span> <span class="st">"_"</span>)  <span class="co"># Combine parts to form the file name</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Save the filtered data as an RDS file with the generated file name</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(df1, <span class="fu">paste0</span>(outdir, ffname, <span class="st">".rds"</span>))</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co"># To run the f_split function on the dataset sbT_07 and save the results in the specified directory</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(frw <span class="ot">&lt;-</span> <span class="fu">f_split</span>(<span class="at">sps =</span> sbT_07,</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>                           <span class="at">outdir =</span> <span class="st">"inputs_sb/sb_LSP_T/"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>The function above will create the files located in the <code>inputs_sb</code> directory.</p>
+</section>
+<section id="nearest-distance-to-ocean-fronts" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="nearest-distance-to-ocean-fronts"><span class="header-section-number">9.3.2</span> Nearest distance to <code>Ocean Fronts</code></h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following sets of code may take some time to process. For the sake of this workshop, you can skip this step as the necessary files have already been provided in <code>outputs_sb</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>distance</code> function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a general function that will calculate the distance of every <code>megafauna</code> record to each <code>ocean front</code> in the grid we created. We will use this function below to iterate over several dates. Always remember to source the helper functions and input files before running the code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Source the helper functions and input files</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_helpFX.R"</span>)  <span class="co"># Load helper functions from the script</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_inputFls_local.R"</span>)  <span class="co"># Load input files specific to this workshop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And the function <code>dist_fx</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dist_fx <span class="ot">&lt;-</span> <span class="cf">function</span>(PUs, fauna, ofdates, cutoff) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    UseCores <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># TO 5 IN LOCAL</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(UseCores)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    lsout <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(fauna))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    ls_out <span class="ot">&lt;-</span> <span class="fu">foreach</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(fauna),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">.packages =</span> <span class="fu">c</span>(<span class="st">"terra"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"dplyr"</span>, </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"sf"</span>, </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"stringr"</span>)) <span class="sc">%dopar%</span> {</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                                      dist02 <span class="ot">&lt;-</span> <span class="fu">st_distance</span>(fauna[x, ], ofdates, <span class="at">by_element =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">t</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as_tibble</span>()</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                                      <span class="co"># Get the upper front quantile of front</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                                      qfront <span class="ot">&lt;-</span> ofdates <span class="sc">%&gt;%</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">quantile</span>(<span class="at">probs =</span> cutoff, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as.vector</span>()</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>                                      final <span class="ot">&lt;-</span> <span class="fu">cbind</span>(PUs[,<span class="dv">1</span>], ofdates[,<span class="dv">2</span>], dist02) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>geometry, <span class="sc">-</span>geometry<span class="fl">.1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">arrange</span>(.[[<span class="dv">3</span>]]) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">filter</span>(.[[<span class="dv">2</span>]] <span class="sc">&gt;</span> qfront) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">1</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>                                      lsout[[x]] <span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> </span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">rename_with</span>(<span class="at">.cols =</span> <span class="dv">1</span>, <span class="sc">~</span><span class="st">"pxID"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">rename_with</span>(<span class="at">.cols =</span> <span class="dv">2</span>, <span class="sc">~</span><span class="st">"FrontMag"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">rename_with</span>(<span class="at">.cols =</span> <span class="dv">3</span>, <span class="sc">~</span><span class="st">"DistHFront"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(fauna<span class="sc">$</span>birdID)), </span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>                                                      <span class="at">dates =</span> <span class="fu">unique</span>(fauna<span class="sc">$</span>date))</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>                                    }</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stopCluster</span>(cl)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>    FFF <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, ls_out)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(FFF)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+working with the <code>distance</code> function on <code>megafauna</code> and <code>ocean front</code> data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define file paths and parameters</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pus <span class="ot">=</span> <span class="st">"input_layers/boundaries/PUs_NA_04km2.shp"</span> <span class="co"># The grid with empty cells</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fsle_sf <span class="ot">=</span> <span class="st">"data_rout/dt_NA_allsat_madt_fsle_2021-07.rds"</span> <span class="co"># The 2021 July FSLE data</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>fdata <span class="ot">=</span> <span class="st">"inputs_sb/sb_LSP_F"</span> <span class="co"># The foraging data</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">=</span> <span class="fl">0.75</span> <span class="co"># The cutoff value to define what qualifies as an ocean front</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>output <span class="ot">=</span> <span class="st">"outputs_sb/"</span> <span class="co"># The directory where the analysis results will be saved</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the grid (PUs) shapefile</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>PUs <span class="ot">&lt;-</span> <span class="fu">st_read</span>(pus)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Load and prepare the FSLE data</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>sf1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(fsle_sf) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> .x <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>)) <span class="co"># Negate the values as required by the analysis</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract and clean the names of the FSLE data columns</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>nms <span class="ot">&lt;-</span> <span class="fu">names</span>(sf1) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  stringr<span class="sc">::</span><span class="fu">str_extract</span>(<span class="at">pattern =</span> <span class="st">".*(?=</span><span class="sc">\\</span><span class="st">.)"</span>) <span class="co"># Extract everything before the first period (.) in each column name</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sf1) <span class="ot">&lt;-</span> nms <span class="co"># Assign cleaned names to the FSLE data columns</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the list of foraging data files</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>vecFls <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> fdata, <span class="at">pattern =</span> <span class="st">".rds"</span>, <span class="at">all.files =</span> <span class="cn">TRUE</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>, <span class="at">recursive =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the date from the FSLE file name to match with the correct foraging data</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>OFdates <span class="ot">&lt;-</span> stringr<span class="sc">::</span><span class="fu">str_remove</span>(<span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="fu">basename</span>(fsle_sf), <span class="at">pattern =</span> <span class="st">"_"</span>))[<span class="dv">6</span>], <span class="at">pattern =</span> <span class="st">".rds"</span>) </span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the foraging data files to only include those that match the FSLE data date</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>vecFls <span class="ot">&lt;-</span> vecFls[stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="at">string =</span> vecFls, <span class="at">pattern =</span> OFdates) <span class="sc">==</span> <span class="cn">TRUE</span>]</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the coordinate reference systems (CRS) for the spatial data</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>LatLon <span class="ot">&lt;-</span> <span class="st">"EPSG:4326"</span> <span class="co"># Standard geographic coordinate system</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>robin <span class="ot">&lt;-</span> <span class="st">"ESRI:54030"</span> <span class="co"># Robinson projection, often used for global maps</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the first foraging data file</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>fdata01 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(vecFls[<span class="dv">1</span>])</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure the data is a data frame (sometimes it might be a list)</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">is.data.frame</span>(fdata01)) {</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  fdata01</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  fdata01 <span class="ot">&lt;-</span> fdata01[[<span class="dv">1</span>]] <span class="co"># If it's a list, extract the first element</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the relevant FSLE data for the dates in the foraging dataset</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>df01 <span class="ot">&lt;-</span> sf1 <span class="sc">%&gt;%</span> </span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">as.character</span>(<span class="fu">unique</span>(fdata01<span class="sc">$</span>date))) <span class="co"># Select columns that match the dates in the foraging data</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a vector of unique dates from the foraging data</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>Fdates <span class="ot">&lt;-</span> <span class="fu">unique</span>(fdata01<span class="sc">$</span>date)</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>FF <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">length</span>(Fdates)) <span class="co"># Initialize a list to store the output for each date</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through each date to calculate the distance between megafauna records and ocean fronts</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="fu">seq_along</span>(Fdates)) {</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter and transform the megafauna data for the current date</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>  mmF <span class="ot">&lt;-</span> fdata01 <span class="sc">%&gt;%</span> </span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>    sf<span class="sc">::</span><span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), <span class="at">crs =</span> LatLon) <span class="sc">%&gt;%</span> <span class="co"># Convert to spatial (sf) object</span></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(date <span class="sc">==</span> Fdates[<span class="dv">1</span>]) <span class="sc">%&gt;%</span> <span class="co"># Filter for the first date (as an example, we are doing this for the first one only; add `j` to iterate over all dates)</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>    sf<span class="sc">::</span><span class="fu">st_transform</span>(<span class="at">crs =</span> robin) <span class="co"># Transform to Robinson projection</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter and transform the ocean front data for the current date</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>  OFCdates <span class="ot">&lt;-</span> df01 <span class="sc">%&gt;%</span> </span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">as.character</span>(Fdates[<span class="dv">1</span>])) <span class="co"># Filter for the first date (as an example, we are doing this for the first one only; add `j` to iterate over all dates)</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>  OFCdates <span class="ot">&lt;-</span> <span class="fu">cbind</span>(PUs, OFCdates) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_transform</span>(<span class="at">crs =</span> robin) <span class="co"># Combine with the grid and transform to Robinson projection</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate the distance between megafauna records and ocean fronts</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>  FF[[j]] <span class="ot">&lt;-</span> <span class="fu">dist_fx</span>(<span class="at">PUs =</span> PUs, <span class="at">fauna =</span> mmF, <span class="at">ofdates =</span> OFCdates, <span class="at">cutoff =</span> cutoff) <span class="co"># Store the result in the list</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all the results into a single data frame</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>FFdf <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, FF) <span class="co"># Combine the list of results into a single data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ofronts_01.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><code>pxID</code>: The identifier for the pixel in the grid</li>
+<li><code>FrontMag</code>: The magnitude of the <code>ocean front</code>, in this case, the <code>FSLE</code> value</li>
+<li><code>DistHFront</code>: The distance to the nearest <code>ocean front</code></li>
+<li><code>group</code>: The identifier for the bird, referred to as <code>birdID</code></li>
+<li><code>dates</code>: The date associated with the data, including the year, month, and day</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>NULL</code> elements above correspond to the remaining dates we did not evaluate in the loop. By replacing the placeholder with <code>j</code>, you should get a complete list of elements in the list of data frames.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>f03_OFrontDist_SB.R</code> function
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The entire function above is located in the <code>zscripts</code> directory. You can also find it below if you want to paste it into a new script in your <code>RStudio</code> console.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code was written by Isaac Brito-Morales (ibrito@conservation.org)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Please do not distribute this code without permission.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># NO GUARANTEES THAT CODE IS CORRECT</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Caveat Emptor!</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"zscripts/z_helpFX.R"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>neardist_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(pus, fsle_sf, fdata, cutoff, output) {</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(terra)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(stringr)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(data.table)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(future.apply)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(parallel)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(doParallel)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(foreach)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  dist_fx <span class="ot">&lt;-</span> <span class="cf">function</span>(PUs, fauna, ofdates, cutoff) {</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    UseCores <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># TO 5 IN LOCAL</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(UseCores)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    lsout <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(fauna))</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    ls_out <span class="ot">&lt;-</span> <span class="fu">foreach</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(fauna),</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>                      <span class="at">.packages =</span> <span class="fu">c</span>(<span class="st">"terra"</span>,</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"dplyr"</span>, </span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"sf"</span>, </span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"stringr"</span>)) <span class="sc">%dopar%</span> {</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>                                      dist02 <span class="ot">&lt;-</span> <span class="fu">st_distance</span>(fauna[x, ], ofdates, <span class="at">by_element =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">t</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as_tibble</span>()</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>                                      <span class="co"># Get the upper front quantile of front</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>                                      qfront <span class="ot">&lt;-</span> ofdates <span class="sc">%&gt;%</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">quantile</span>(<span class="at">probs =</span> cutoff, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as.vector</span>()</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>                                      final <span class="ot">&lt;-</span> <span class="fu">cbind</span>(PUs[,<span class="dv">1</span>], ofdates[,<span class="dv">2</span>], dist02) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>geometry, <span class="sc">-</span>geometry<span class="fl">.1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">arrange</span>(.[[<span class="dv">3</span>]]) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">filter</span>(.[[<span class="dv">2</span>]] <span class="sc">&gt;</span> qfront) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">1</span>)</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>                                      lsout[[x]] <span class="ot">&lt;-</span> final <span class="sc">%&gt;%</span> </span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">rename_with</span>(<span class="at">.cols =</span> <span class="dv">1</span>, <span class="sc">~</span><span class="st">"pxID"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">rename_with</span>(<span class="at">.cols =</span> <span class="dv">2</span>, <span class="sc">~</span><span class="st">"FrontMag"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">rename_with</span>(<span class="at">.cols =</span> <span class="dv">3</span>, <span class="sc">~</span><span class="st">"DistHFront"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>                                        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(fauna<span class="sc">$</span>birdID)), </span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>                                                      <span class="at">dates =</span> <span class="fu">unique</span>(fauna<span class="sc">$</span>date))</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>                                      </span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>                                    }</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stopCluster</span>(cl)</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>    FFF <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, ls_out)</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(FFF)</span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Reading inputs</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>    PUs <span class="ot">&lt;-</span> <span class="fu">st_read</span>(pus)</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>    sf1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(fsle_sf) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> .x <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>    nms <span class="ot">&lt;-</span> <span class="fu">names</span>(sf1) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>      stringr<span class="sc">::</span><span class="fu">str_extract</span>(<span class="at">pattern =</span> <span class="st">".*(?=</span><span class="sc">\\</span><span class="st">.)"</span>)</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(sf1) <span class="ot">&lt;-</span> nms</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>    vecFls <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> fdata, <span class="at">pattern =</span> <span class="st">".rds"</span>, <span class="at">all.files =</span> <span class="cn">TRUE</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>, <span class="at">recursive =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>    OFdates <span class="ot">&lt;-</span> stringr<span class="sc">::</span><span class="fu">str_remove</span>(<span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="fu">basename</span>(fsle_sf), <span class="at">pattern =</span> <span class="st">"_"</span>))[<span class="dv">6</span>], <span class="at">pattern =</span> <span class="st">".rds"</span>)</span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>    vecFls <span class="ot">&lt;-</span> vecFls[stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="at">string =</span> vecFls, <span class="at">pattern =</span> OFdates) <span class="sc">==</span> <span class="cn">TRUE</span>]</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>    FFdf <span class="ot">&lt;-</span>  future.apply<span class="sc">::</span><span class="fu">future_lapply</span>(vecFls, <span class="at">future.scheduling =</span> <span class="dv">5</span>, <span class="at">FUN =</span> <span class="cf">function</span>(x) { <span class="co"># TO 5 IN LOCAL</span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>      <span class="co"># </span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>        LatLon <span class="ot">&lt;-</span> <span class="st">"EPSG:4326"</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>        robin <span class="ot">&lt;-</span> <span class="st">"ESRI:54030"</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>      <span class="co"># </span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>        fdata01 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(x)</span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="fu">is.data.frame</span>(fdata01)) {</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>          fdata01</span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>          } <span class="cf">else</span> {</span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>            fdata01 <span class="ot">&lt;-</span> fdata01[[<span class="dv">1</span>]]</span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>      <span class="co"># ocean fronts per day of each biodiversity data</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>      df01 <span class="ot">&lt;-</span> sf1 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">as.character</span>(<span class="fu">unique</span>(fdata01<span class="sc">$</span>date)))</span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>      <span class="co"># we need to create a vector with the unique date information</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>      Fdates <span class="ot">&lt;-</span> <span class="fu">unique</span>(fdata01<span class="sc">$</span>date)</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>      FF <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">length</span>(Fdates))</span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(j <span class="cf">in</span> <span class="fu">seq_along</span>(Fdates)) {</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Filter the megafauna data for each date</span></span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>        mmF <span class="ot">&lt;-</span> fdata01 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>          sf<span class="sc">::</span><span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), <span class="at">crs =</span> LatLon) <span class="sc">%&gt;%</span> <span class="co"># from dataframe to sf object</span></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>          dplyr<span class="sc">::</span><span class="fu">filter</span>(date <span class="sc">==</span> Fdates[j]) <span class="sc">%&gt;%</span> <span class="co"># add the j here</span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>          sf<span class="sc">::</span><span class="fu">st_transform</span>(<span class="at">crs =</span> robin)</span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Filter Front data for each date of the megafauna data</span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>        OFCdates <span class="ot">&lt;-</span> df01 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>          dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">as.character</span>(Fdates[j]))</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>        OFCdates <span class="ot">&lt;-</span> <span class="fu">cbind</span>(PUs, OFCdates) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>          <span class="fu">st_transform</span>(<span class="at">crs =</span> robin)</span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>        <span class="co"># </span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>        FF[[j]] <span class="ot">&lt;-</span> <span class="fu">dist_fx</span>(<span class="at">PUs =</span> PUs, <span class="at">fauna =</span> mmF, <span class="at">ofdates =</span> OFCdates, <span class="at">cutoff =</span> cutoff)</span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Tidy up the final list</span></span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>      FFdf <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, FF)</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>      })</span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>  <span class="co"># File name for the output</span></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lapply</span>(FFdf, <span class="cf">function</span>(x){</span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a>      sgl <span class="ot">&lt;-</span> x</span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a>      ngrd <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="fu">basename</span>(output), <span class="st">"_"</span>))[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">collapse =</span> <span class="st">"_"</span>)</span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>      ndate <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="fu">unlist</span>(<span class="fu">unique</span>(sgl<span class="sc">$</span>dates)[<span class="dv">1</span>]), <span class="st">"-"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="at">collapse =</span> <span class="st">"-"</span>)</span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a>      ffname <span class="ot">&lt;-</span> <span class="fu">paste</span>(ngrd, ndate, <span class="fu">unique</span>(<span class="fu">gsub</span>(<span class="st">"[./]"</span>, <span class="st">""</span>, sgl<span class="sc">$</span>group)), <span class="at">sep =</span> <span class="st">"_"</span>)</span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a>      <span class="fu">saveRDS</span>(sgl, <span class="fu">paste0</span>(output, ffname, <span class="fu">paste</span>(<span class="st">"_cutoff"</span>, cutoff, <span class="at">sep =</span> <span class="st">"-"</span>), <span class="st">".rds"</span>))</span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(FFdf)</span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus on -&gt; 2021-07; 2021-08</span></span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="co"># SeaBirds</span></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a>   <span class="fu">system.time</span>(tt <span class="ot">&lt;-</span> <span class="fu">neardist_sim</span>(<span class="at">pus =</span> <span class="st">"input_layers/boundaries/PUs_NA_04km2.shp"</span>,</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">fsle_sf =</span> <span class="st">"data_rout/dt_NA_allsat_madt_fsle_2021-08.rds"</span>,</span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">fdata =</span> <span class="st">"inputs_sb/sb_LSP_T"</span>,</span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">cutoff =</span> <span class="fl">0.75</span>,</span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">output =</span> <span class="st">"outputs_sb/sb_LSP_T/"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08_matchingMFOFC.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Extracting <code>Front</code> Data (or any variable) for the Created Grid</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./10_eval_hist_plots.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Distance Plots</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

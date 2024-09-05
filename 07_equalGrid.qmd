@@ -1,0 +1,160 @@
+# `equal-area grid` for your area of interest
+
+So far, we have focused on processing `netCDF` files more efficiently (and elegantly?), and on importing them into `R` to extract the appropriate `raster` data (in this case, **FSLE**) for the megafauna analysis component.
+
+However, to move forward with our spatial dataset, we need to complete several tasks. The most important one is defining the study area and subdividing the region into a discrete, `equal-area grid`. This grid will be used to identify `fronts` and track megafauna movements. For this purpose, we will create an `equal-area grid` for the **North Atlantic** region. The code provided can be adapted to create a similar grid for any region, anywhere.
+
+The code itself is relatively simple. While there are many ways to accomplish this, I'll walk you through my approach, line by line.
+
+## Data import
+
+Load the required packages and some files from the `z_helpFX.R` script.
+
+```{r, message = FALSE, warning = FALSE, out.width = "40%", eval = FALSE}
+source("zscripts/z_helpFX.R")
+```
+
+## Defining the spatial limits
+
+::: callout-tip
+## bounding box
+
+The bounding box defined here is not for the entire North Atlantic, but specifically for a subset of the seabird dataset that we will use as an example in this workshop. You can find the seabird dataset in the `inputs_sb` folder within the workshop repository that you have already cloned.
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+# Define the bounding box for the area of interest
+# Coordinates correspond to the specified region (xmin, xmax, ymin, ymax)
+# The CRS is set to match the existing LatLon CRS
+bbox <- st_bbox(c(xmin = -54, xmax = -35, ymin = 40, ymax = 57), 
+                crs = st_crs(LatLon)) %>% 
+  st_as_sfc() %>%  # Convert the bounding box to a simple feature geometry (sfc)
+  st_transform(crs = robin)  # Transform the CRS to the Robinson projection
+f_bbox <- bbox  # Assign the transformed bbox to f_bbox for further use
+
+# Define the cell area for the grid (in square kilometers)
+CellArea <- 4 # Set the area for each grid cell to 4 km²
+
+# Calculate the diameter of a hexagonal grid cell in meters
+h_diameter <- 2 * sqrt((CellArea*1e6)/((3*sqrt(3)/2))) * sqrt(3)/2 
+
+# Alternatively, calculate the side length of a square grid cell in meters
+s_diameter <- sqrt(CellArea*1e6)
+```
+:::
+
+## Creating an equal-area grid
+
+::: callout-tip
+## spatial grid
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+# Create the grid (planning units) for the entire region based on the bounding box
+# The grid cells are hexagonal (square = F) with the specified cell size (h_diameter)
+# The grid is created as polygons and uses the CRS of the bounding box
+PUs <- st_make_grid(f_bbox,
+                    square = F,
+                    cellsize = c(h_diameter, h_diameter),
+                    what = "polygons",
+                    crs = st_crs(f_bbox)) %>%
+  st_sf()  # Convert the grid to a simple feature (sf) object
+
+# Verify the size of the grid cells to ensure they are correct
+# Calculate the area of each grid cell and convert the units to km²
+# Print the range of cell sizes to check for consistency
+print(paste0("Range of cellsize are ",
+             round(as.numeric(range(units::set_units(st_area(PUs), "km^2")))[1])," km² to ",
+             round(as.numeric(range(units::set_units(st_area(PUs), "km^2")))[2])," km²"))
+
+# Identify grid cells that do not intersect with the North Atlantic region
+logi_PUs <- st_centroid(PUs) %>%
+  st_intersects(naSF_rob) %>% 
+  lengths > 0  # Convert to a logical vector indicating intersections
+
+# Filter out grid cells that intersect with the North Atlantic region, leaving only relevant cells
+PUs1 <- PUs[logi_PUs == FALSE, ]
+```
+:::
+
+## Plotting the output
+
+::: callout-tip
+## `ggplot()`
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+g1 <- ggplot() +
+    geom_sf(data = PUs, size = 0.05) +
+    geom_sf(data = worldsf_rob, size = 0.05, fill = "grey20") +
+    theme_bw() +
+    coord_sf(xlim = c(st_bbox(worldsf_rob2)$xmin + 85000, st_bbox(worldsf_rob2)$xmax - 85000),
+             ylim = c(st_bbox(worldsf_rob2)$ymin + 70000, st_bbox(worldsf_rob2)$ymax - 70000),
+             expand = TRUE)
+ print(g1)
+```
+:::
+
+::: callout-warning
+## Writing the grid
+
+You can create the new grid file by typing the following command. However, the workshop repository for this eBook already contains the file, so you may want to change the directory path below before running the code in the `RStudio` console.
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+st_write(obj = PUs1, dsn = "input_layers/boundaries/", layer = "PUs_NA_04km2", driver = "ESRI Shapefile")
+```
+
+The same applies to the previous ggplot we created.
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+ggsave("input_layers/boundaries/PUs_NA_04km2.png", plot = g1, width = 30, height = 30, dpi = 300, limitsize = FALSE)
+```
+:::
+
+::: {.callout-caution collapse="true"}
+## `z_fx_punits.R` function in `zscripts` directory
+
+The entire function above is located in the `zscripts` directory. You can also find it below if you want to paste it into a new script in your `RStudio` console.
+
+```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+# Define the bounding box for the area of interest
+# Coordinates correspond to the specified region (xmin, xmax, ymin, ymax)
+# The CRS is set to match the existing LatLon CRS
+bbox <- st_bbox(c(xmin = -54, xmax = -35, ymin = 40, ymax = 57), 
+                crs = st_crs(LatLon)) %>% 
+  st_as_sfc() %>%  # Convert the bounding box to a simple feature geometry (sfc)
+  st_transform(crs = robin)  # Transform the CRS to the Robinson projection
+f_bbox <- bbox  # Assign the transformed bbox to f_bbox for further use
+
+# Define the cell area for the grid (in square kilometers)
+CellArea <- 4 # Set the area for each grid cell to 4 km²
+
+# Calculate the diameter of a hexagonal grid cell in meters
+h_diameter <- 2 * sqrt((CellArea*1e6)/((3*sqrt(3)/2))) * sqrt(3)/2 
+
+# Alternatively, calculate the side length of a square grid cell in meters
+s_diameter <- sqrt(CellArea*1e6)
+
+# Create the grid (planning units) for the entire region based on the bounding box
+# The grid cells are hexagonal (square = F) with the specified cell size (h_diameter)
+# The grid is created as polygons and uses the CRS of the bounding box
+PUs <- st_make_grid(f_bbox,
+                    square = F,
+                    cellsize = c(h_diameter, h_diameter),
+                    what = "polygons",
+                    crs = st_crs(f_bbox)) %>%
+  st_sf()  # Convert the grid to a simple feature (sf) object
+
+# Verify the size of the grid cells to ensure they are correct
+# Calculate the area of each grid cell and convert the units to km²
+# Print the range of cell sizes to check for consistency
+print(paste0("Range of cellsize are ",
+             round(as.numeric(range(units::set_units(st_area(PUs), "km^2")))[1])," km² to ",
+             round(as.numeric(range(units::set_units(st_area(PUs), "km^2")))[2])," km²"))
+
+# Identify grid cells that do not intersect with the North Atlantic region
+logi_PUs <- st_centroid(PUs) %>%
+  st_intersects(naSF_rob) %>% 
+  lengths > 0  # Convert to a logical vector indicating intersections
+
+# Filter out grid cells that intersect with the North Atlantic region, leaving only relevant cells
+PUs1 <- PUs[logi_PUs == FALSE, ]
+```
+:::

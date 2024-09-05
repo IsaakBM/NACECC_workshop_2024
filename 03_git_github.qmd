@@ -1,0 +1,72 @@
+# What exactly are `Git` and `GitHub`?
+
+```{r, out.width = "70%", echo = FALSE, fig.align = "center"}
+  knitr::include_graphics("images/phd101212s.gif")
+```
+
+Before diving into the details, it's important to mention that most of the information presented here is adapted from [NCEAS](https://www.nceas.ucsb.edu/) training materials. Feel free to explore and use these resources [here](https://learning.nceas.ucsb.edu/).
+
+::: callout-tip
+## If you have never installed Git on your local machine, follow these steps:
+
+-   Visit the official Git website: [git-scm.com](https://git-scm.com/).
+-   Click on the "Download" button and select the version appropriate for your operating system (Windows, macOS, or Linux).
+-   Open the downloaded file and follow the installation instructions.
+-   Use the default settings recommended by the installer, unless you have specific preferences.
+:::
+
+## Git
+
+-   an open-source distributed version control software
+-   designed to manage the versioning and tracking of source code files and project history
+-   operates locally on your computer, allowing you to create repositories, and track changes
+-   provides features such as committing changes, branching and merging code, reverting to previous versions, and managing project history
+-   works directly with the files on your computer and does not require a network connection to perform most operations
+-   primarily used through the command-line interface (CLI, e.g. Terminal), but also has various GUI tools available (e.g. RStudio IDE)
+
+## GitHub
+
+-   online platform and service built around Git
+-   provides a centralized hosting platform for Git repositories
+-   allows us to store, manage, and collaborate on their Git repositories in the cloud
+-   offers additional features on top of Git, such as a web-based interface, issue tracking, project management tools, pull requests, code review, and collaboration features
+-   enables easy sharing of code with others, facilitating collaboration and contribution to open source projects
+-   provides a social aspect, allowing users to follow projects, star repositories, and discover new code
+
+## Creating GitHub repository
+
+As always, there are different ways to skin a cat here! We'll explore some of them, and you can decide later which best fits your style.
+
+### Using the GitHub Website
+
+::: callout-tip
+## Setup
+
+-   Login to [GitHub](https://github.com/)
+-   Click the New repository button
+-   Name it `{FIRSTNAME}_delete`
+-   Add a short description
+-   Check the box to add a `README.md` file
+-   Add a `.gitignore` file using the `R` template
+-   Set the `LICENSE` to Apache 2.0
+:::
+
+### Using the GitHub Desktop app
+
+The GitHub Desktop app is a user-friendly application that allows you to interact with GitHub repositories from your local computer without using the command line. It provides a graphical interface to perform common GitHub tasks, such as:
+
+-   **Cloning repositories**: Easily download repositories from GitHub to your local machine.
+-   **Committing changes**: Make changes to files and save them with a message describing what you've done.
+-   **Pushing and pulling changes**: Sync your local changes with the remote repository on GitHub and fetch the latest updates from collaborators.
+-   **Branch management**: Create, switch, merge, and delete branches to manage different versions or features of your project.
+-   **Resolving merge conflicts**: Visually resolve conflicts that occur when merging changes from different branches.
+
+The app simplifies the workflow for those who prefer a graphical interface over the command line, making GitHub more accessible to users of all experience levels. It is available for both Windows and macOS.
+
+::: callout-tip
+## Setup
+
+-   Go to [GitHub Desktop](https://desktop.github.com/)
+-   Click "Download" and select your operating system.
+-   Install the file on your local computer.
+:::

@@ -1,0 +1,41 @@
+# Welcome!
+
+Welcome to the Ocean Fronts Megafauna Workshop! This workshop is specifically designed to assist you in getting started with ocean fronts and megafauna data analysis using R.
+
+::: callout-important
+## Disclaimer 1
+
+Please note that the objective of this workshop is not to provide a comprehensive overview that would make you an expert in this field. Rather, our goal is to help you grasp the core principles underlying the relationships between ocean fronts and megafauna, and to guide you through some of the common tasks involved in analyzing and interpreting such data.
+:::
+
+The workshop will run from 9 am to 3 pm (Halifax Time) from Thursday, September 12th to Tuesday, September 17th, 2024.
+
+```{r, out.width = "100%", echo = FALSE}
+  knitr::include_graphics("images/cover.png")
+```
+
+## Open Science: [NCEAS](https://www.nceas.ucsb.edu/our-approach)
+
+With this material, we are following the [NCEAS](https://www.nceas.ucsb.edu/our-approach) data approach to make research more transparent and reproducible, which enhances the credibility, utility, and accuracy of the science used to solve global challenges.
+
+::: callout-note
+Open science is the philosophy and practice of making data and methods accessible, replicable, and free to use, typically through computer programming tools and techniques. It helps researchers compile and analyze data more efficiently and identify solutions more quickly.
+:::
+
+## Acknowledgments
+
+The authors acknowledge funding from the [**Ocean Front Change**](https://www.conservation.org/projects/oceanfrontchange) project, supported by the [**Belmont Forum**](https://www.belmontforum.org/) and implemented through the **National Science Foundation**, NSF Award 2029710.
+
+All code in this book was authored by [Isaac Brito-Morales](https://isaakbm.github.io/ibm-personalweb/) ([ibrito\@conservation.org](ibrito@conservation.org)). Please do not distribute this ebook without permission.
+
+::: callout-important
+## Disclaimer 2
+
+No Guarantees on Code Accuracy!
+
+Caveat Emptor! (Latin for "Let the buyer beware")
+:::
+
+## About This Book
+
+This is a Quarto book. To learn more about Quarto books, visit [Quarto Documentation](https://quarto.org/docs/books/).
