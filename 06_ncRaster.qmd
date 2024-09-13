@@ -133,6 +133,8 @@ for (i in 1:length(tt)) {  # Loop through each time step
 ## `Crop`/Manipulate and project
 
 ```{r, eval = FALSE, out.width = "40%", eval = FALSE}
+library(stringr)
+
 # Define the output directory
 outdir <- "data_rout/"
 
@@ -147,7 +149,8 @@ rs02 <- terra::rotate(rs01)
 rs03 <- terra::crop(rs02, ext(-70, -10, 33, 67))
 
 # Generate the output file name by appending the input file name to the output directory
-output_name <- paste0(outdir, basename(rs))
+output_name <- paste0(outdir, 
+                      str_replace_all(basename(rs), ".nc", ".tif"))
 
 # Save the cropped raster to the specified output directory
 terra::writeRaster(rs03, output_name, overwrite = TRUE)
