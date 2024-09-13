@@ -401,24 +401,27 @@ Warning
 <section id="cropmanipulate-and-project" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="cropmanipulate-and-project"><span class="header-section-number">6.3</span> <code>Crop</code>/Manipulate and project</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the output directory</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>outdir <span class="ot">&lt;-</span> <span class="st">"data_rout/"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the raster file</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>rs  <span class="ot">&lt;-</span>  <span class="st">"data_raw/2016/combined_file.nc"</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>rs01 <span class="ot">&lt;-</span> <span class="fu">rast</span>(rs)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Rotate the raster to correct orientation issues (if any)</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>rs02 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rotate</span>(rs01)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Crop the raster to the specified extent (coordinates for the North Atlantic region)</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>rs03 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">crop</span>(rs02, <span class="fu">ext</span>(<span class="sc">-</span><span class="dv">70</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="dv">33</span>, <span class="dv">67</span>))</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the output file name by appending the input file name to the output directory</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>output_name <span class="ot">&lt;-</span> <span class="fu">paste0</span>(outdir, <span class="fu">basename</span>(rs))</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the cropped raster to the specified output directory</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(rs03, output_name, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the output directory</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>outdir <span class="ot">&lt;-</span> <span class="st">"data_rout/"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the raster file</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>rs  <span class="ot">&lt;-</span>  <span class="st">"data_raw/2016/combined_file.nc"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>rs01 <span class="ot">&lt;-</span> <span class="fu">rast</span>(rs)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Rotate the raster to correct orientation issues (if any)</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>rs02 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rotate</span>(rs01)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Crop the raster to the specified extent (coordinates for the North Atlantic region)</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>rs03 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">crop</span>(rs02, <span class="fu">ext</span>(<span class="sc">-</span><span class="dv">70</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="dv">33</span>, <span class="dv">67</span>))</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the output file name by appending the input file name to the output directory</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>output_name <span class="ot">&lt;-</span> <span class="fu">paste0</span>(outdir, </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">str_replace_all</span>(<span class="fu">basename</span>(rs), <span class="st">".nc"</span>, <span class="st">".tif"</span>))</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the cropped raster to the specified output directory</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(rs03, output_name, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
