@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hands-On: Ocean Front Workshop 2024 - References</title>
+<title>Hands-On: Ocean Front Workshop 2024 - Appendix 01: CMIP6 models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11_cmip6_models.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./10_eval_hist_plots.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -92,7 +93,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_cmip6_models.html">Appendix 01: CMIP6 models</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -206,13 +207,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_cmip6_models.html" class="sidebar-item-text sidebar-link">
+  <a href="./11_cmip6_models.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Appendix 01: CMIP6 models</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -222,14 +223,28 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#schematic-of-the-cmipcmip6-experimental-design" id="toc-schematic-of-the-cmipcmip6-experimental-design" class="nav-link active" data-scroll-target="#schematic-of-the-cmipcmip6-experimental-design">Schematic of the CMIP/CMIP6 experimental design</a>
+  <ul class="collapse">
+  <li><a href="#most-common-climate-scenarios" id="toc-most-common-climate-scenarios" class="nav-link" data-scroll-target="#most-common-climate-scenarios">Most common climate scenarios</a></li>
+  </ul></li>
+  <li><a href="#overview-of-ssps" id="toc-overview-of-ssps" class="nav-link" data-scroll-target="#overview-of-ssps">Overview of SSPs</a>
+  <ul class="collapse">
+  <li><a href="#how-to-download-cmip6-models" id="toc-how-to-download-cmip6-models" class="nav-link" data-scroll-target="#how-to-download-cmip6-models">How to download CMIP6 models</a></li>
+  </ul></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/IsaakBM/NACECC_workshop_2024/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title">Appendix 01: CMIP6 models</h1>
 </div>
 
 
@@ -244,30 +259,95 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<p><strong>CMIP6</strong> stands for Coupled Model Intercomparison Project (CMIP). These are climate models that simulate the physics, chemistry and biology of the atmosphere in detail (some of them!). The 2013 IPCC fifth assessment report (AR5) featured climate models from CMIP5, while the upcoming 2021 IPCC sixth assessment report (AR6) will feature new state-of-the-art CMIP6 models <span class="citation" data-cites="schoeman2023">(<a href="references.html#ref-schoeman2023" role="doc-biblioref">Schoeman et al. 2023</a>)</span>.</p>
+<p>The main goal is to set future climate scenarios based on <em>future</em> concentrations of <strong>greenhouse gases</strong>, <strong>aerosols</strong> and other <a href="https://www.carbonbrief.org/qa-how-do-climate-models-work#inout"><strong>climate forcings</strong></a> to project what might happen in the future.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/cmip6_mips.jpg" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<section id="schematic-of-the-cmipcmip6-experimental-design" class="level2">
+<h2 class="anchored" data-anchor-id="schematic-of-the-cmipcmip6-experimental-design">Schematic of the CMIP/CMIP6 experimental design</h2>
+<section id="most-common-climate-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="most-common-climate-scenarios">Most common climate scenarios</h3>
+<p>From CMIP5 version you will find those as RCPs (Representative Concentration Pathways) but for the new CMIP6 version they are called SSPs (Shared Socio‐Economic Pathways).</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/ssps.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/cmip6_models.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="overview-of-ssps" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-ssps">Overview of SSPs</h2>
+<p><strong>Most commonly SSPs used</strong>:</p>
+<ul>
+<li>SSP1-2.6: An optimistic scenario, characterised by a shift to a more sustainable economy and reduction in inequality resulting in a peak in radiative forcing of ~3 W m-2 before 2100</li>
+<li>SSP2-4.5: An intermediate scenario, with a stabilisation of radiative forcing levels at ~4.5 W m-2 by 2100</li>
+<li>SSP5-8.5: Characterised by a continued increase of greenhouse gas emissions resulting from a fossil-fuel-based economy and increased energy demand, with a radiative forcing &gt;8.5 W m-2 by 2100</li>
+</ul>
+<section id="how-to-download-cmip6-models" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-download-cmip6-models">How to download CMIP6 models</h3>
+<p>CMIP6 models are free available at the <a href="https://esgf.llnl.gov/"><strong>Earth System Grid Federation</strong></a> website. You will need an account to download models. <a href="https://esgf.github.io/esgf-user-support/user_guide.html"><strong>Check this tutorial</strong></a> of how to create an account.</p>
+<p>Through the website:</p>
+<ul>
+<li>Click <a href="https://esgf.llnl.gov/">here</a> to open the ESGF website</li>
+<li>Go to the <em>Nodes</em> tab to explore the different ESGF-CoG nodes</li>
+<li>Click the <a href="https://aims2.llnl.gov/">Metagrid UI</a> link, for the Metagrid new version</li>
+</ul>
+<p>Select a <a href="https://aims2.llnl.gov/">Metagrid UI</a> node, go to collection and then <a href="https://aims2.llnl.gov/">CMIP6</a> link. This is the main website to download CMIP6 models. At your left you have several filters that you can play with, my advice is filter first for variable.</p>
+</section>
+</section>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<p>There are a range of variables available from the GCM (General Circulation Model) outputs. Each tab has different model variable on different time scales. The tabs are in alphabetical order. The ones starting with “O” are for Ocean, and then followed by the timescale (clim = climatology, day, dec = decade, mon = month, yr) (source: <span class="citation" data-cites="schoeman2023">(<a href="references.html#ref-schoeman2023" role="doc-biblioref">Schoeman et al. 2023</a>)</span>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/cmip601.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<p>From the left tab:</p>
+<ul>
+<li>click the <strong>+</strong> in the <strong>variable</strong> option. Select <strong>tos</strong> (ocean temperature on surface). Then click <strong>Search</strong></li>
+<li>click the <strong>+</strong> in the <strong>Realm</strong> option. Select <strong>ocean</strong> and <strong>ocnBgChem</strong>. Then click <strong>Search</strong></li>
+<li>click the <strong>+</strong> in the <strong>Frequency</strong> option. Select <strong>mon</strong>. Then click <strong>Search</strong></li>
+<li>click the <strong>+</strong> in the <strong>Variant Label</strong> option. Select <strong>r1i1p1f1</strong> (this is the most common ensemble). Then click <strong>Search</strong></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/cmip602.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/cmip603.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<p>The ensemble names “r1i1p1”, “r2i1p1”, etc. in <strong>Variant Label</strong> indicate that the ensemble members differ only in their initial conditions (the model physics are the same for all ensemble members, but the members were initialized from different initial conditions out of the control simulation). Hence, the differences between the ensemble members represent internal variability.</p>
+<ul>
+<li>click the <strong>+</strong> in the <strong>Experiment ID</strong> option. In this option you will see every single <em>Experiment/Simulation</em>. For example, <strong>G1/G6/G7</strong> are the geoengineering climate scenarios. Go to the bottom of the <strong>Experiment ID</strong> tab and click <strong>ssp585</strong>. Then click <strong>Search</strong></li>
+<li>click the <strong>+</strong> in the <strong>Source ID</strong> option for the full model list and their Institution ID. Let’s click on <strong>GFDL-CM4</strong> model from GFDL/NOAA lab. Then click <strong>Search</strong></li>
+</ul>
+<p>If you have follow the previous steps you should get a tab result similar to this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/cmip603.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<p>To download the model, just click on the <strong>List Files</strong> tab and then select <strong>HTTP Download</strong></p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-schoeman2023" class="csl-entry" role="listitem">
-Schoeman, David S., Alex Sen Gupta, Cheryl S. Harrison, Jason D.
-Everett, Isaac Brito-Morales, Lee Hannah, Laurent Bopp, Patrick R.
-Roehrdanz, and Anthony J. Richardson. 2023. <span>“Demystifying Global
-Climate Models for Use in the Life Sciences.”</span> <em>Trends in
-Ecology &amp; Evolution</em> 38 (9): 843–58. <a href="https://doi.org/10.1016/j.tree.2023.04.005">https://doi.org/10.1016/j.tree.2023.04.005</a>.
-</div>
-<div id="ref-sudre2023" class="csl-entry" role="listitem">
-Sudre, Floriane, Boris Dewitte, Camille Mazoyer, Véronique Garçon, Joel
-Sudre, Pierrick Penven, and Vincent Rossi. 2023. <span>“Spatial and
-Seasonal Variability of Horizontal Temperature Fronts in the Mozambique
-Channel for Both Epipelagic and Mesopelagic Realms.”</span>
-<em>Frontiers in Marine Science</em> 9. <a href="https://www.frontiersin.org/articles/10.3389/fmars.2022.1045136">https://www.frontiersin.org/articles/10.3389/fmars.2022.1045136</a>.
-</div>
-<div id="ref-sudre2023a" class="csl-entry" role="listitem">
-Sudre, Floriane, Ismael Hernández-Carrasco, Camille Mazoyer, Joel Sudre,
-Boris Dewitte, Véronique Garçon, and Vincent Rossi. 2023. <span>“An
-Ocean Front Dataset for the Mediterranean Sea and Southwest Indian
-Ocean.”</span> <em>Scientific Data</em> 10 (1): 730. <a href="https://doi.org/10.1038/s41597-023-02615-z">https://doi.org/10.1038/s41597-023-02615-z</a>.
+Schoeman, David S., Alex Sen Gupta, Cheryl S. Harrison, Jason D. Everett, Isaac Brito-Morales, Lee Hannah, Laurent Bopp, Patrick R. Roehrdanz, and Anthony J. Richardson. 2023. <span>“Demystifying Global Climate Models for Use in the Life Sciences.”</span> <em>Trends in Ecology &amp; Evolution</em> 38 (9): 843–58. <a href="https://doi.org/10.1016/j.tree.2023.04.005">https://doi.org/10.1016/j.tree.2023.04.005</a>.
 </div>
 </div>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -505,15 +585,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11_cmip6_models.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Appendix 01: CMIP6 models</span>
+      <a href="./10_eval_hist_plots.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Distance Plots</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/IsaakBM/NACECC_workshop_2024/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+</body></html>
